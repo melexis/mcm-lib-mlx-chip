@@ -67,6 +67,12 @@ const ProgKeys_t mlx81339a02_programming_keys = {
     .values = mlx81339a02_programming_keys_values,
 };
 
+const PpmLoader_t mlx81339a02_ppm_loader = {
+    .prog_keys = &mlx81339a02_programming_keys,
+    .eeprom_verification_session = true,
+    .flash_cs_programming_session = false,
+};
+
 const UartLoader_t mlx81339a02_uart_loader = {
     .prog_keys = &mlx81339a02_programming_keys,
 };
@@ -83,6 +89,7 @@ const MlxChip_t mlx81339a02 = {
         .nv_memory = &mlx81339a02_nv_memory,
     },
     .bootloaders = {
+        .ppm_loader = &mlx81339a02_ppm_loader,
         .uart_loader = &mlx81339a02_uart_loader,
     },
 };

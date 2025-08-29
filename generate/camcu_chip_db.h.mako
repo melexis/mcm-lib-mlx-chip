@@ -100,6 +100,26 @@ const ProgKeys_t ${mlx_chip.full_name.lower()}_programming_keys = {
     .values = ${mlx_chip.full_name.lower()}_programming_keys_values,
 };
 % endif
+% if mlx_chip.ppm_loader is not None:
+
+const PpmLoader_t ${mlx_chip.full_name.lower()}_ppm_loader = {
+% if mlx_chip.ppm_loader.prog_keys_session is not None:
+    .prog_keys = &${mlx_chip.full_name.lower()}_programming_keys,
+% else:
+    .prog_keys = NULL,
+% endif
+% if mlx_chip.ppm_loader.eeprom_verification_session is not None:
+    .eeprom_verification_session = true,
+% else:
+    .eeprom_verification_session = false,
+% endif
+% if mlx_chip.ppm_loader.flash_cs_programming_session is not None:
+    .flash_cs_programming_session = true,
+% else:
+    .flash_cs_programming_session = false,
+% endif
+};
+% endif
 % if mlx_chip.uart_loader is not None:
 
 const UartLoader_t ${mlx_chip.full_name.lower()}_uart_loader = {
@@ -135,6 +155,11 @@ const MlxChip_t ${mlx_chip.full_name.lower()} = {
 % endif
     },
     .bootloaders = {
+% if mlx_chip.ppm_loader is not None:
+        .ppm_loader = &${mlx_chip.full_name.lower()}_ppm_loader,
+% else:
+        .ppm_loader = NULL,
+% endif
 % if mlx_chip.uart_loader is not None:
         .uart_loader = &${mlx_chip.full_name.lower()}_uart_loader,
 % else:

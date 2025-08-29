@@ -29,8 +29,9 @@ def main():
     camcu_chips = []
     for chipname in get_all_chipnames("camcu"):
         camcu_chip = MlxChipCamcu(chip_name=chipname)
-        if camcu_chip.uart_loader is not None:
-            camcu_chips.append(camcu_chip)
+        if camcu_chip.active:
+            if camcu_chip.uart_loader is not None or camcu_chip.ppm_loader is not None:
+                camcu_chips.append(camcu_chip)
 
     for chip in camcu_chips:
         generate_file(CURRENT_DIR / "camcu_chip_db.h.mako", INC_DIR / f"{chip.full_name.lower()}.h", mlx_chip=chip)

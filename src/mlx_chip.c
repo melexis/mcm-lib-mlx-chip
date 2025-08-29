@@ -25,14 +25,48 @@
  */
 
 #include "mlx_chip.h"
-#include "mlx81339a01.h"
+#include "mlx81113xaa.h"
+#include "mlx81113xab.h"
+#include "mlx81118xaa.h"
+#include "mlx81118xab.h"
+#include "mlx81160a01.h"
+#include "mlx81330b02.h"
+#include "mlx81332b02.h"
+#include "mlx81334a01.h"
 #include "mlx81339a02.h"
 #include "mlx81339b01.h"
+#include "mlx81340b01.h"
+#include "mlx81344b01.h"
+#include "mlx81346b01.h"
+#include "mlx81350a01.h"
+#include "mlx81350b01.h"
+#include "mlx81352a01.h"
+#include "mlx81354a01.h"
+#include "mlx91230aa.h"
+#include "mlx91230ba.h"
+#include "mlx91230bb.h"
 
 const MlxChip_t * camcu_chips[] = {
-    &mlx81339a01,
+    &mlx81113xaa,
+    &mlx81113xab,
+    &mlx81118xaa,
+    &mlx81118xab,
+    &mlx81160a01,
+    &mlx81330b02,
+    &mlx81332b02,
+    &mlx81334a01,
     &mlx81339a02,
     &mlx81339b01,
+    &mlx81340b01,
+    &mlx81344b01,
+    &mlx81346b01,
+    &mlx81350a01,
+    &mlx81350b01,
+    &mlx81352a01,
+    &mlx81354a01,
+    &mlx91230aa,
+    &mlx91230ba,
+    &mlx91230bb,
 };
 
 const MlxChip_t * mlxchip_getCamcuChip(uint16_t project_id) {

@@ -83,11 +83,18 @@ typedef struct ProgKeys {
     const uint16_t * values;
 } ProgKeys_t;
 
+typedef struct PpmLoader {
+    const ProgKeys_t * prog_keys;
+    bool eeprom_verification_session;
+    bool flash_cs_programming_session;
+} PpmLoader_t;
+
 typedef struct UartLoader {
     const ProgKeys_t * prog_keys;
 } UartLoader_t;
 
 typedef struct Bootloaders {
+    const PpmLoader_t * ppm_loader;
     const UartLoader_t * uart_loader;
 } Bootloaders_t;
 
