@@ -21,7 +21,7 @@
  *
  * @ingroup lib_mlx_chip
  *
- * @details This file was automatically generated using pymlxchip v4.13.0 and provides the
+ * @details This file was automatically generated using pymlxchip v4.16.0 and provides the
  * declarations of the Melexis MLX91230BB chip database.
  */
 #pragma once
@@ -49,9 +49,9 @@ const Flash_t mlx91230bb_flash = {
     .page = 0x80u,
     .sector = 0x800u,
     .erase_unit = 0x800u,
-    .erase_time = 25,
+    .erase_time = 30,
     .write_unit = 0x80u,
-    .write_time = 80,
+    .write_time = 7,
     .write_partial = true,
 };
 
@@ -60,8 +60,8 @@ const FlashCs_t mlx91230bb_flash_cs = {
     .length = 0x00100u,
     .writeable = 0x80u,
     .page = 0x80u,
-    .erase_time = 25,
-    .write_time = 5,
+    .erase_time = 30,
+    .write_time = 7,
 };
 
 const NvMemory_t mlx91230bb_nv_memory = {

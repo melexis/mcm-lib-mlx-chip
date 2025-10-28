@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Melexis MLX81339A02 chip database
+ * @brief Melexis MLX81349A01 chip database
  * @internal
  *
  * @copyright (C) 2025 Melexis N.V.
@@ -22,7 +22,7 @@
  * @ingroup lib_mlx_chip
  *
  * @details This file was automatically generated using pymlxchip v4.16.0 and provides the
- * declarations of the Melexis MLX81339A02 chip database.
+ * declarations of the Melexis MLX81349A01 chip database.
  */
 #pragma once
 
@@ -33,12 +33,11 @@
 extern "C" {
 #endif
 
-const ProjectId_t mlx81339a02_project_ids[] = {
-    {.id = 0x2503u, .name = "MLX81339-xDC-AMx-202"},
-    {.id = 0x2504u, .name = "MLX81339-xLW-AMx-202"},
+const ProjectId_t mlx81349a01_project_ids[] = {
+    {.id = 0x4901u, .name = "MLX81349-xLW-AMx-000"},
 };
 
-const Flash_t mlx81339a02_flash = {
+const Flash_t mlx81349a01_flash = {
     .start = 0x05800u,
     .length = 0x08000u,
     .page = 0x80u,
@@ -50,7 +49,7 @@ const Flash_t mlx81339a02_flash = {
     .write_partial = true,
 };
 
-const NvMemory_t mlx81339a02_nv_memory = {
+const NvMemory_t mlx81349a01_nv_memory = {
     .start = 0x00800u,
     .length = 0x00400u,
     .writeable = 0x300u,
@@ -58,39 +57,39 @@ const NvMemory_t mlx81339a02_nv_memory = {
     .write_time = 22,
 };
 
-const uint16_t mlx81339a02_programming_keys_values[] = {
+const uint16_t mlx81349a01_programming_keys_values[] = {
     0x5648u, 0xA5E4u, 0xA5E3u, 0x95A8u
 };
 
-const ProgKeys_t mlx81339a02_programming_keys = {
-    .length = sizeof(mlx81339a02_programming_keys_values) / sizeof(uint16_t),
-    .values = mlx81339a02_programming_keys_values,
+const ProgKeys_t mlx81349a01_programming_keys = {
+    .length = sizeof(mlx81349a01_programming_keys_values) / sizeof(uint16_t),
+    .values = mlx81349a01_programming_keys_values,
 };
 
-const PpmLoader_t mlx81339a02_ppm_loader = {
-    .prog_keys = &mlx81339a02_programming_keys,
+const PpmLoader_t mlx81349a01_ppm_loader = {
+    .prog_keys = &mlx81349a01_programming_keys,
     .eeprom_verification_session = true,
     .flash_cs_programming_session = false,
 };
 
-const UartLoader_t mlx81339a02_uart_loader = {
-    .prog_keys = &mlx81339a02_programming_keys,
+const UartLoader_t mlx81349a01_uart_loader = {
+    .prog_keys = &mlx81349a01_programming_keys,
 };
 
-const MlxChip_t mlx81339a02 = {
-    .name = "MLX81339A02",
+const MlxChip_t mlx81349a01 = {
+    .name = "MLX81349A01",
     .project_ids = {
-        .length = sizeof(mlx81339a02_project_ids) / sizeof(ProjectId_t),
-        .values = mlx81339a02_project_ids
+        .length = sizeof(mlx81349a01_project_ids) / sizeof(ProjectId_t),
+        .values = mlx81349a01_project_ids
     },
     .memories = {
-        .flash = &mlx81339a02_flash,
+        .flash = &mlx81349a01_flash,
         .flash_cs = NULL,
-        .nv_memory = &mlx81339a02_nv_memory,
+        .nv_memory = &mlx81349a01_nv_memory,
     },
     .bootloaders = {
-        .ppm_loader = &mlx81339a02_ppm_loader,
-        .uart_loader = &mlx81339a02_uart_loader,
+        .ppm_loader = &mlx81349a01_ppm_loader,
+        .uart_loader = &mlx81349a01_uart_loader,
     },
 };
 

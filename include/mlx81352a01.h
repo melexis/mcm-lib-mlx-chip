@@ -21,7 +21,7 @@
  *
  * @ingroup lib_mlx_chip
  *
- * @details This file was automatically generated using pymlxchip v4.13.0 and provides the
+ * @details This file was automatically generated using pymlxchip v4.16.0 and provides the
  * declarations of the Melexis MLX81352A01 chip database.
  */
 #pragma once
@@ -44,11 +44,11 @@ const Flash_t mlx81352a01_flash = {
     .start = 0x05800u,
     .length = 0x08000u,
     .page = 0x100u,
-    .sector = 0x800u,
-    .erase_unit = 0x800u,
-    .erase_time = 25,
+    .sector = 0x1000u,
+    .erase_unit = 0x1000u,
+    .erase_time = 30,
     .write_unit = 0x100u,
-    .write_time = 80,
+    .write_time = 7,
     .write_partial = true,
 };
 
@@ -57,14 +57,14 @@ const FlashCs_t mlx81352a01_flash_cs = {
     .length = 0x00200u,
     .writeable = 0x100u,
     .page = 0x100u,
-    .erase_time = 25,
-    .write_time = 5,
+    .erase_time = 30,
+    .write_time = 7,
 };
 
 const NvMemory_t mlx81352a01_nv_memory = {
     .start = 0x00400u,
     .length = 0x00640u,
-    .writeable = 0x1B0u,
+    .writeable = 0x5B0u,
     .page = 0x8u,
     .write_time = 12.5,
 };
