@@ -19,7 +19,7 @@ def print_prog_keys(keys):
  * @brief Melexis ${mlx_chip.full_name} chip database
  * @internal
  *
- * @copyright (C) ${datetime.now().year} Melexis N.V.
+ * @copyright (C) 2024-${datetime.now().year} Melexis N.V.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,24 +39,26 @@ def print_prog_keys(keys):
  *
  * @details This file was automatically generated using pymlxchip v${pymlxchip_version} and provides the
  * declarations of the Melexis ${mlx_chip.full_name} chip database.
+ * @{
  */
 #pragma once
 
 #include <stddef.h>
+
 #include "mlx_chip.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-const ProjectId_t ${mlx_chip.full_name.lower()}_project_ids[] = {
+const mlx_project_id_t ${mlx_chip.full_name.lower()}_project_ids[] = {
 % for project_id in mlx_chip.get_project_ids():
     {.id = ${"0x%04X" % project_id}u, .name = "${mlx_chip.get_order_code(project_id)}"},
 % endfor
 };
 % if mlx_chip.flash is not None:
 
-const Flash_t ${mlx_chip.full_name.lower()}_flash = {
+const mlx_flash_t ${mlx_chip.full_name.lower()}_flash = {
     .start = ${"0x%05X" % mlx_chip.flash.start}u,
     .length = ${"0x%05X" % mlx_chip.flash.length}u,
     .page = ${"0x%X" % mlx_chip.flash.pagesize}u,
@@ -70,7 +72,7 @@ const Flash_t ${mlx_chip.full_name.lower()}_flash = {
 % endif
 % if mlx_chip.flash_cs is not None:
 
-const FlashCs_t ${mlx_chip.full_name.lower()}_flash_cs = {
+const mlx_flash_cs_t ${mlx_chip.full_name.lower()}_flash_cs = {
     .start = ${"0x%05X" % mlx_chip.flash_cs.start}u,
     .length = ${"0x%05X" % mlx_chip.flash_cs.length}u,
     .writeable = ${"0x%X" % mlx_chip.flash_cs.writeable}u,
@@ -81,7 +83,7 @@ const FlashCs_t ${mlx_chip.full_name.lower()}_flash_cs = {
 % endif
 % if mlx_chip.nv_memory is not None:
 
-const NvMemory_t ${mlx_chip.full_name.lower()}_nv_memory = {
+const mlx_nv_memory_t ${mlx_chip.full_name.lower()}_nv_memory = {
     .start = ${"0x%05X" % mlx_chip.nv_memory.start}u,
     .length = ${"0x%05X" % mlx_chip.nv_memory.length}u,
     .writeable = ${"0x%X" % mlx_chip.nv_memory.writeable}u,
@@ -95,14 +97,14 @@ const uint16_t ${mlx_chip.full_name.lower()}_programming_keys_values[] = {
     ${print_prog_keys(mlx_chip.programming_keys.keys)}
 };
 
-const ProgKeys_t ${mlx_chip.full_name.lower()}_programming_keys = {
+const mlx_prog_keys_t ${mlx_chip.full_name.lower()}_programming_keys = {
     .length = sizeof(${mlx_chip.full_name.lower()}_programming_keys_values) / sizeof(uint16_t),
     .values = ${mlx_chip.full_name.lower()}_programming_keys_values,
 };
 % endif
 % if mlx_chip.ppm_loader is not None:
 
-const PpmLoader_t ${mlx_chip.full_name.lower()}_ppm_loader = {
+const mlx_ppm_loader_t ${mlx_chip.full_name.lower()}_ppm_loader = {
 % if mlx_chip.ppm_loader.prog_keys_session is not None:
     .prog_keys = &${mlx_chip.full_name.lower()}_programming_keys,
 % else:
@@ -122,7 +124,7 @@ const PpmLoader_t ${mlx_chip.full_name.lower()}_ppm_loader = {
 % endif
 % if mlx_chip.uart_loader is not None:
 
-const UartLoader_t ${mlx_chip.full_name.lower()}_uart_loader = {
+const mlx_uart_loader_t ${mlx_chip.full_name.lower()}_uart_loader = {
 % if mlx_chip.programming_keys is not None:
     .prog_keys = &${mlx_chip.full_name.lower()}_programming_keys,
 % else:
@@ -131,10 +133,10 @@ const UartLoader_t ${mlx_chip.full_name.lower()}_uart_loader = {
 };
 % endif
 
-const MlxChip_t ${mlx_chip.full_name.lower()} = {
+const mlx_chip_t ${mlx_chip.full_name.lower()} = {
     .name = "${mlx_chip.full_name}",
     .project_ids = {
-        .length = sizeof(${mlx_chip.full_name.lower()}_project_ids) / sizeof(ProjectId_t),
+        .length = sizeof(${mlx_chip.full_name.lower()}_project_ids) / sizeof(mlx_project_id_t),
         .values = ${mlx_chip.full_name.lower()}_project_ids
     },
     .memories = {
@@ -167,6 +169,8 @@ const MlxChip_t ${mlx_chip.full_name.lower()} = {
 % endif
     },
 };
+
+/** @} */
 
 #ifdef __cplusplus
 }

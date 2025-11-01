@@ -3,7 +3,7 @@
  * @brief Melexis MLX81346B01 chip database
  * @internal
  *
- * @copyright (C) 2025 Melexis N.V.
+ * @copyright (C) 2024-2025 Melexis N.V.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,22 +23,24 @@
  *
  * @details This file was automatically generated using pymlxchip v4.16.0 and provides the
  * declarations of the Melexis MLX81346B01 chip database.
+ * @{
  */
 #pragma once
 
 #include <stddef.h>
+
 #include "mlx_chip.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-const ProjectId_t mlx81346b01_project_ids[] = {
+const mlx_project_id_t mlx81346b01_project_ids[] = {
     {.id = 0x0E05u, .name = "MLX81346-xLW-BMx-003"},
     {.id = 0x0E06u, .name = "MLX81346-xPF-BMx-003"},
 };
 
-const Flash_t mlx81346b01_flash = {
+const mlx_flash_t mlx81346b01_flash = {
     .start = 0x08000u,
     .length = 0x10000u,
     .page = 0x80u,
@@ -50,7 +52,7 @@ const Flash_t mlx81346b01_flash = {
     .write_partial = true,
 };
 
-const NvMemory_t mlx81346b01_nv_memory = {
+const mlx_nv_memory_t mlx81346b01_nv_memory = {
     .start = 0x00400u,
     .length = 0x00240u,
     .writeable = 0x1B0u,
@@ -62,21 +64,21 @@ const uint16_t mlx81346b01_programming_keys_values[] = {
     0x5648u, 0xA5E4u, 0xA5E3u, 0x0007u, 0xAA4Au
 };
 
-const ProgKeys_t mlx81346b01_programming_keys = {
+const mlx_prog_keys_t mlx81346b01_programming_keys = {
     .length = sizeof(mlx81346b01_programming_keys_values) / sizeof(uint16_t),
     .values = mlx81346b01_programming_keys_values,
 };
 
-const PpmLoader_t mlx81346b01_ppm_loader = {
+const mlx_ppm_loader_t mlx81346b01_ppm_loader = {
     .prog_keys = &mlx81346b01_programming_keys,
     .eeprom_verification_session = false,
     .flash_cs_programming_session = false,
 };
 
-const MlxChip_t mlx81346b01 = {
+const mlx_chip_t mlx81346b01 = {
     .name = "MLX81346B01",
     .project_ids = {
-        .length = sizeof(mlx81346b01_project_ids) / sizeof(ProjectId_t),
+        .length = sizeof(mlx81346b01_project_ids) / sizeof(mlx_project_id_t),
         .values = mlx81346b01_project_ids
     },
     .memories = {
@@ -89,6 +91,8 @@ const MlxChip_t mlx81346b01 = {
         .uart_loader = NULL,
     },
 };
+
+/** @} */
 
 #ifdef __cplusplus
 }

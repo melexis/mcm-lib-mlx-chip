@@ -3,7 +3,7 @@
  * @brief Melexis chip databases
  * @internal
  *
- * @copyright (C) 2025 Melexis N.V.
+ * @copyright (C) 2024-2025 Melexis N.V.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,8 +21,9 @@
  *
  * @ingroup lib_mlx_chip
  *
- * @details implementations of the Melexis chip databases.
+ * @details Implementations of the Melexis chip databases.
  */
+#include <stdint.h>
 
 #include "mlx_chip.h"
 #include "mlx81113xaa.h"
@@ -48,7 +49,7 @@
 #include "mlx91230ba.h"
 #include "mlx91230bb.h"
 
-const MlxChip_t * camcu_chips[] = {
+const mlx_chip_t * camcu_chips[] = {
     &mlx81113xaa,
     &mlx81113xab,
     &mlx81118xaa,
@@ -73,8 +74,8 @@ const MlxChip_t * camcu_chips[] = {
     &mlx91230bb,
 };
 
-const MlxChip_t * mlxchip_getCamcuChip(uint16_t project_id) {
-    for (uint16_t chip_index = 0u; chip_index < sizeof(camcu_chips) / sizeof(MlxChip_t *); chip_index++) {
+const mlx_chip_t * mlxchip_get_camcu_chip(uint16_t project_id) {
+    for (uint16_t chip_index = 0u; chip_index < sizeof(camcu_chips) / sizeof(mlx_chip_t *); chip_index++) {
         for (uint16_t id_index = 0u; id_index < camcu_chips[chip_index]->project_ids.length; id_index++) {
             if (camcu_chips[chip_index]->project_ids.values[id_index].id == project_id) {
                 return camcu_chips[chip_index];
