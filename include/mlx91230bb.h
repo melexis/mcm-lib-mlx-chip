@@ -3,7 +3,7 @@
  * @brief Melexis MLX91230BB chip database
  * @internal
  *
- * @copyright (C) 2025 Melexis N.V.
+ * @copyright (C) 2024-2025 Melexis N.V.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,17 +23,19 @@
  *
  * @details This file was automatically generated using pymlxchip v4.16.0 and provides the
  * declarations of the Melexis MLX91230BB chip database.
+ * @{
  */
 #pragma once
 
 #include <stddef.h>
+
 #include "mlx_chip.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-const ProjectId_t mlx91230bb_project_ids[] = {
+const mlx_project_id_t mlx91230bb_project_ids[] = {
     {.id = 0x0D03u, .name = "MLX9123x-KDC-BBA-000"},
     {.id = 0x0D04u, .name = "MLX91230KDC-BBA-100"},
     {.id = 0x0D05u, .name = "MLX91230KDC-BBC-000"},
@@ -43,7 +45,7 @@ const ProjectId_t mlx91230bb_project_ids[] = {
     {.id = 0x0D09u, .name = "MLX91231KGO-BBC-000"},
 };
 
-const Flash_t mlx91230bb_flash = {
+const mlx_flash_t mlx91230bb_flash = {
     .start = 0x08000u,
     .length = 0x08000u,
     .page = 0x80u,
@@ -55,7 +57,7 @@ const Flash_t mlx91230bb_flash = {
     .write_partial = true,
 };
 
-const FlashCs_t mlx91230bb_flash_cs = {
+const mlx_flash_cs_t mlx91230bb_flash_cs = {
     .start = 0x07F00u,
     .length = 0x00100u,
     .writeable = 0x80u,
@@ -64,7 +66,7 @@ const FlashCs_t mlx91230bb_flash_cs = {
     .write_time = 7,
 };
 
-const NvMemory_t mlx91230bb_nv_memory = {
+const mlx_nv_memory_t mlx91230bb_nv_memory = {
     .start = 0x00400u,
     .length = 0x00238u,
     .writeable = 0x200u,
@@ -76,21 +78,21 @@ const uint16_t mlx91230bb_programming_keys_values[] = {
     0x5648u, 0xA5E4u, 0xA5E3u, 0x0007u, 0xAA4Au
 };
 
-const ProgKeys_t mlx91230bb_programming_keys = {
+const mlx_prog_keys_t mlx91230bb_programming_keys = {
     .length = sizeof(mlx91230bb_programming_keys_values) / sizeof(uint16_t),
     .values = mlx91230bb_programming_keys_values,
 };
 
-const PpmLoader_t mlx91230bb_ppm_loader = {
+const mlx_ppm_loader_t mlx91230bb_ppm_loader = {
     .prog_keys = &mlx91230bb_programming_keys,
     .eeprom_verification_session = true,
     .flash_cs_programming_session = true,
 };
 
-const MlxChip_t mlx91230bb = {
+const mlx_chip_t mlx91230bb = {
     .name = "MLX91230BB",
     .project_ids = {
-        .length = sizeof(mlx91230bb_project_ids) / sizeof(ProjectId_t),
+        .length = sizeof(mlx91230bb_project_ids) / sizeof(mlx_project_id_t),
         .values = mlx91230bb_project_ids
     },
     .memories = {
@@ -103,6 +105,8 @@ const MlxChip_t mlx91230bb = {
         .uart_loader = NULL,
     },
 };
+
+/** @} */
 
 #ifdef __cplusplus
 }

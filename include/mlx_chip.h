@@ -3,7 +3,7 @@
  * @brief Melexis chip databases
  * @internal
  *
- * @copyright (C) 2025 Melexis N.V.
+ * @copyright (C) 2024-2025 Melexis N.V.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,8 +20,10 @@
  * @endinternal
  *
  * @ingroup lib_mlx_chip
+ * @addtogroup lib_mlx_chip Melexis Chip Databases Library
  *
- * @details declarations of the Melexis chip databases.
+ * @details Definitions of the Melexis chip databases.
+ * @{
  */
 #pragma once
 
@@ -33,17 +35,17 @@
 extern "C" {
 #endif
 
-typedef struct ProjectId {
+typedef struct mlx_project_id_s {
     uint16_t id;
     const char * name;
-} ProjectId_t;
+} mlx_project_id_t;
 
-typedef struct ProjectIds {
+typedef struct mlx_project_ids_s {
     size_t length;
-    const ProjectId_t * values;
-} ProjectIds_t;
+    const mlx_project_id_t * values;
+} mlx_project_ids_t;
 
-typedef struct Flash {
+typedef struct mlx_flash_s {
     uint32_t start;
     uint32_t length;
     uint32_t page;
@@ -53,61 +55,63 @@ typedef struct Flash {
     uint32_t write_unit;
     double write_time;
     bool write_partial;
-} Flash_t;
+} mlx_flash_t;
 
-typedef struct FlashCs {
+typedef struct mlx_flash_cs_s {
     uint32_t start;
     uint32_t length;
     uint32_t writeable;
     uint32_t page;
     double erase_time;
     double write_time;
-} FlashCs_t;
+} mlx_flash_cs_t;
 
-typedef struct NvMemory {
+typedef struct mlx_nv_memory_s {
     uint32_t start;
     uint32_t length;
     uint32_t writeable;
     uint32_t page;
     double write_time;
-} NvMemory_t;
+} mlx_nv_memory_t;
 
-typedef struct Memories {
-    const Flash_t * flash;
-    const FlashCs_t * flash_cs;
-    const NvMemory_t * nv_memory;
-} Memories_t;
+typedef struct mlx_memories_s {
+    const mlx_flash_t * flash;
+    const mlx_flash_cs_t * flash_cs;
+    const mlx_nv_memory_t * nv_memory;
+} mlx_memories_t;
 
-typedef struct ProgKeys {
+typedef struct mlx_prog_keys_s {
     size_t length;
     const uint16_t * values;
-} ProgKeys_t;
+} mlx_prog_keys_t;
 
-typedef struct PpmLoader {
-    const ProgKeys_t * prog_keys;
+typedef struct mlx_ppm_loader_s {
+    const mlx_prog_keys_t * prog_keys;
     bool eeprom_verification_session;
     bool flash_cs_programming_session;
-} PpmLoader_t;
+} mlx_ppm_loader_t;
 
-typedef struct UartLoader {
-    const ProgKeys_t * prog_keys;
-} UartLoader_t;
+typedef struct mlx_uart_loader_s {
+    const mlx_prog_keys_t * prog_keys;
+} mlx_uart_loader_t;
 
-typedef struct Bootloaders {
-    const PpmLoader_t * ppm_loader;
-    const UartLoader_t * uart_loader;
-} Bootloaders_t;
+typedef struct mlx_bootloaders_s {
+    const mlx_ppm_loader_t * ppm_loader;
+    const mlx_uart_loader_t * uart_loader;
+} mlx_bootloaders_t;
 
-typedef struct MlxChip {
+typedef struct mlx_chip_s {
     const char * name;
-    ProjectIds_t project_ids;
-    Memories_t memories;
-    Bootloaders_t bootloaders;
-} MlxChip_t;
+    mlx_project_ids_t project_ids;
+    mlx_memories_t memories;
+    mlx_bootloaders_t bootloaders;
+} mlx_chip_t;
 
-extern const MlxChip_t * camcu_chips[];
+extern const mlx_chip_t * camcu_chips[];
 
-const MlxChip_t * mlxchip_getCamcuChip(uint16_t project_id);
+const mlx_chip_t * mlxchip_get_camcu_chip(uint16_t project_id);
+
+/** @} */
 
 #ifdef __cplusplus
 }
