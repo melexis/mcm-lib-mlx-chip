@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Melexis MLX81113xAB chip database
+ * @brief Melexis MLX81119xAA chip database
  * @internal
  *
  * @copyright (C) 2024-2025 Melexis N.V.
@@ -22,7 +22,7 @@
  * @ingroup lib_mlx_chip
  *
  * @details This file was automatically generated using pymlxchip v4.17.3 and provides the
- * declarations of the Melexis MLX81113xAB chip database.
+ * declarations of the Melexis MLX81119xAA chip database.
  * @{
  */
 #pragma once
@@ -35,58 +35,67 @@
 extern "C" {
 #endif
 
-const mlx_project_id_t mlx81113xab_project_ids[] = {
-    {.id = 0x1203u, .name = "MLX81113xAB"},
+const mlx_project_id_t mlx81119xaa_project_ids[] = {
+    {.id = 0x1901u, .name = "MLX81119xAA"},
 };
 
-const mlx_flash_t mlx81113xab_flash = {
+const mlx_flash_t mlx81119xaa_flash = {
     .start = 0x05800u,
     .length = 0x08000u,
     .page = 0x80u,
     .sector = 0x800u,
     .erase_unit = 0x800u,
-    .erase_time = 40,
+    .erase_time = 30,
     .write_unit = 0x80u,
     .write_time = 7,
     .write_partial = true,
 };
 
-const mlx_flash_cs_t mlx81113xab_flash_cs = {
+const mlx_flash_cs_t mlx81119xaa_flash_cs = {
     .start = 0x05700u,
     .length = 0x00100u,
     .writeable = 0x80u,
     .page = 0x80u,
-    .erase_time = 40,
+    .erase_time = 30,
     .write_time = 7,
 };
 
-const mlx_nv_memory_t mlx81113xab_nv_memory = {
+const mlx_nv_memory_t mlx81119xaa_nv_memory = {
     .start = 0x00800u,
     .length = 0x00238u,
-    .writeable = 0x1B0u,
+    .writeable = 0x200u,
     .page = 0x8u,
     .write_time = 12.5,
 };
 
-const mlx_ppm_loader_t mlx81113xab_ppm_loader = {
-    .prog_keys = NULL,
-    .eeprom_verification_session = false,
-    .flash_cs_programming_session = false,
+const uint16_t mlx81119xaa_programming_keys_values[] = {
+    0x5648u, 0xA5E4u, 0xA5E3u, 0x0007u, 0xAA4Au
 };
 
-const mlx_chip_t mlx81113xab = {
-    .name = "MLX81113xAB",
+const mlx_prog_keys_t mlx81119xaa_programming_keys = {
+    .length = sizeof(mlx81119xaa_programming_keys_values) / sizeof(uint16_t),
+    .values = mlx81119xaa_programming_keys_values,
+};
+
+const mlx_ppm_loader_t mlx81119xaa_ppm_loader = {
+    .prog_keys = &mlx81119xaa_programming_keys,
+    .eeprom_verification_session = true,
+    .flash_cs_programming_session = true,
+};
+
+const mlx_chip_t mlx81119xaa = {
+    .name = "MLX81119xAA",
     .project_ids = {
-        .length = sizeof(mlx81113xab_project_ids) / sizeof(mlx_project_id_t),
-        .values = mlx81113xab_project_ids
+        .length = sizeof(mlx81119xaa_project_ids) / sizeof(mlx_project_id_t),
+        .values = mlx81119xaa_project_ids
     },
     .memories = {
-        .flash = &mlx81113xab_flash,
-        .flash_cs = &mlx81113xab_flash_cs,
-        .nv_memory = &mlx81113xab_nv_memory,
+        .flash = &mlx81119xaa_flash,
+        .flash_cs = &mlx81119xaa_flash_cs,
+        .nv_memory = &mlx81119xaa_nv_memory,
     },
     .bootloaders = {
-        .ppm_loader = &mlx81113xab_ppm_loader,
+        .ppm_loader = &mlx81119xaa_ppm_loader,
         .uart_loader = NULL,
     },
 };

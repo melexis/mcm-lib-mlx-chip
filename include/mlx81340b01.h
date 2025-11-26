@@ -21,7 +21,7 @@
  *
  * @ingroup lib_mlx_chip
  *
- * @details This file was automatically generated using pymlxchip v4.16.0 and provides the
+ * @details This file was automatically generated using pymlxchip v4.17.3 and provides the
  * declarations of the Melexis MLX81340B01 chip database.
  * @{
  */
@@ -63,7 +63,7 @@ const mlx_flash_cs_t mlx81340b01_flash_cs = {
 
 const mlx_nv_memory_t mlx81340b01_nv_memory = {
     .start = 0x00400u,
-    .length = 0x00240u,
+    .length = 0x00238u,
     .writeable = 0x1B0u,
     .page = 0x8u,
     .write_time = 12.5,

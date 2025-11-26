@@ -21,7 +21,7 @@
  *
  * @ingroup lib_mlx_chip
  *
- * @details This file was automatically generated using pymlxchip v4.16.0 and provides the
+ * @details This file was automatically generated using pymlxchip v4.17.3 and provides the
  * declarations of the Melexis MLX91230BB chip database.
  * @{
  */
@@ -89,6 +89,10 @@ const mlx_ppm_loader_t mlx91230bb_ppm_loader = {
     .flash_cs_programming_session = true,
 };
 
+const mlx_uart_loader_t mlx91230bb_uart_loader = {
+    .prog_keys = &mlx91230bb_programming_keys,
+};
+
 const mlx_chip_t mlx91230bb = {
     .name = "MLX91230BB",
     .project_ids = {
@@ -102,7 +106,7 @@ const mlx_chip_t mlx91230bb = {
     },
     .bootloaders = {
         .ppm_loader = &mlx91230bb_ppm_loader,
-        .uart_loader = NULL,
+        .uart_loader = &mlx91230bb_uart_loader,
     },
 };
 
