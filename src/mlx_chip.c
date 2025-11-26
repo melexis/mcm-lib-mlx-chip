@@ -30,6 +30,7 @@
 #include "mlx81113xab.h"
 #include "mlx81118xaa.h"
 #include "mlx81118xab.h"
+#include "mlx81119xaa.h"
 #include "mlx81160a01.h"
 #include "mlx81330b02.h"
 #include "mlx81332b02.h"
@@ -54,6 +55,7 @@ const mlx_chip_t * camcu_chips[] = {
     &mlx81113xab,
     &mlx81118xaa,
     &mlx81118xab,
+    &mlx81119xaa,
     &mlx81160a01,
     &mlx81330b02,
     &mlx81332b02,
