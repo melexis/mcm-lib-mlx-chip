@@ -21,7 +21,7 @@
  *
  * @ingroup lib_mlx_chip
  *
- * @details This file was automatically generated using pymlxchip v4.17.3 and provides the
+ * @details This file was automatically generated using pymlxchip v4.17.6 and provides the
  * declarations of the Melexis MLX81354A01 chip database.
  * @{
  */
@@ -39,7 +39,7 @@ const mlx_project_id_t mlx81354a01_project_ids[] = {
     {.id = 0x2801u, .name = "MLX81354-xDC-AMx-000"},
     {.id = 0x2802u, .name = "MLX81354-xDC-AMx-100"},
     {.id = 0x2803u, .name = "MLX81354-xDC-AMx-200"},
-    {.id = 0x2804u, .name = "MLX81354-xLW-AMx-100"},
+    {.id = 0x2804u, .name = "MLX81354-xLW-AMx-200"},
 };
 
 const mlx_flash_t mlx81354a01_flash = {
