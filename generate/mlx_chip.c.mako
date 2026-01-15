@@ -29,12 +29,23 @@ from datetime import datetime
 #include <stdint.h>
 
 #include "mlx_chip.h"
+/* camcu */
 %for chip in sorted(camcu_chips, key=lambda x: x.full_name):
 #include "${chip.full_name.lower()}.h"
+%endfor
+/* ganymede */
+%for chip in sorted(ganymede_chips, key=lambda x: x.full_name):
+#include "db/${chip.full_name.lower()}.h"
 %endfor
 
 const mlx_chip_t * camcu_chips[] = {
 %for chip in sorted(camcu_chips, key=lambda x: x.full_name):
+    &${chip.full_name.lower()},
+%endfor
+};
+
+const mlx_chip_t * ganymede_chips[] = {
+%for chip in sorted(ganymede_chips, key=lambda x: x.full_name):
     &${chip.full_name.lower()},
 %endfor
 };
@@ -44,6 +55,17 @@ const mlx_chip_t * mlxchip_get_camcu_chip(uint16_t project_id) {
         for (uint16_t id_index = 0u; id_index < camcu_chips[chip_index]->project_ids.length; id_index++) {
             if (camcu_chips[chip_index]->project_ids.values[id_index].id == project_id) {
                 return camcu_chips[chip_index];
+            }
+        }
+    }
+    return NULL;
+}
+
+const mlx_chip_t * mlxchip_get_ganymede_chip(uint16_t project_id) {
+    for (uint16_t chip_index = 0u; chip_index < sizeof(ganymede_chips) / sizeof(mlx_chip_t *); chip_index++) {
+        for (uint16_t id_index = 0u; id_index < ganymede_chips[chip_index]->project_ids.length; id_index++) {
+            if (ganymede_chips[chip_index]->project_ids.values[id_index].id == project_id) {
+                return ganymede_chips[chip_index];
             }
         }
     }

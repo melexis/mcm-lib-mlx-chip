@@ -3,7 +3,7 @@
  * @brief Melexis chip databases
  * @internal
  *
- * @copyright (C) 2024-2025 Melexis N.V.
+ * @copyright (C) 2024-2026 Melexis N.V.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,6 +26,7 @@
 #include <stdint.h>
 
 #include "mlx_chip.h"
+/* camcu */
 #include "mlx81113xaa.h"
 #include "mlx81113xab.h"
 #include "mlx81118xaa.h"
@@ -49,6 +50,8 @@
 #include "mlx91230aa.h"
 #include "mlx91230ba.h"
 #include "mlx91230bb.h"
+/* ganymede */
+#include "db/mlx90332c.h"
 
 const mlx_chip_t * camcu_chips[] = {
     &mlx81113xaa,
@@ -76,11 +79,26 @@ const mlx_chip_t * camcu_chips[] = {
     &mlx91230bb,
 };
 
+const mlx_chip_t * ganymede_chips[] = {
+    &mlx90332c,
+};
+
 const mlx_chip_t * mlxchip_get_camcu_chip(uint16_t project_id) {
     for (uint16_t chip_index = 0u; chip_index < sizeof(camcu_chips) / sizeof(mlx_chip_t *); chip_index++) {
         for (uint16_t id_index = 0u; id_index < camcu_chips[chip_index]->project_ids.length; id_index++) {
             if (camcu_chips[chip_index]->project_ids.values[id_index].id == project_id) {
                 return camcu_chips[chip_index];
+            }
+        }
+    }
+    return NULL;
+}
+
+const mlx_chip_t * mlxchip_get_ganymede_chip(uint16_t project_id) {
+    for (uint16_t chip_index = 0u; chip_index < sizeof(ganymede_chips) / sizeof(mlx_chip_t *); chip_index++) {
+        for (uint16_t id_index = 0u; id_index < ganymede_chips[chip_index]->project_ids.length; id_index++) {
+            if (ganymede_chips[chip_index]->project_ids.values[id_index].id == project_id) {
+                return ganymede_chips[chip_index];
             }
         }
     }

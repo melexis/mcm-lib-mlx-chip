@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Melexis MLX81118xAB chip database
+ * @brief Melexis MLX90332C chip database
  * @internal
  *
  * @copyright (C) 2024-2026 Melexis N.V.
@@ -22,7 +22,7 @@
  * @ingroup lib_mlx_chip
  *
  * @details This file was automatically generated using pymlxchip v4.18.1 and provides the
- * declarations of the Melexis MLX81118xAB chip database.
+ * declarations of the Melexis MLX90332C chip database.
  * @{
  */
 #pragma once
@@ -35,12 +35,12 @@
 extern "C" {
 #endif
 
-const mlx_project_id_t mlx81118xab_project_ids[] = {
-    {.id = 0x1802u, .name = "MLX81118xAB"},
+const mlx_project_id_t mlx90332c_project_ids[] = {
+    {.id = 0x6E01u, .name = "MLX90332C"},
 };
 
-const mlx_flash_t mlx81118xab_flash = {
-    .start = 0x05800u,
+const mlx_flash_t mlx90332c_flash = {
+    .start = 0x08000u,
     .length = 0x08000u,
     .page = 0x80u,
     .sector = 0x800u,
@@ -51,8 +51,8 @@ const mlx_flash_t mlx81118xab_flash = {
     .write_partial = true,
 };
 
-const mlx_flash_cs_t mlx81118xab_flash_cs = {
-    .start = 0x05700u,
+const mlx_flash_cs_t mlx90332c_flash_cs = {
+    .start = 0x07F00u,
     .length = 0x00100u,
     .writeable = 0x80u,
     .page = 0x80u,
@@ -60,42 +60,42 @@ const mlx_flash_cs_t mlx81118xab_flash_cs = {
     .write_time = 7,
 };
 
-const mlx_nv_memory_t mlx81118xab_nv_memory = {
-    .start = 0x00800u,
-    .length = 0x00238u,
-    .writeable = 0x1B0u,
+const mlx_nv_memory_t mlx90332c_nv_memory = {
+    .start = 0x01000u,
+    .length = 0x00240u,
+    .writeable = 0x200u,
     .page = 0x8u,
-    .write_time = 12.5,
+    .write_time = 14.3,
 };
 
-const uint16_t mlx81118xab_programming_keys_values[] = {
-    0x5648u, 0xA5E4u, 0xA5E3u, 0x0007u, 0xAA4Au
+const uint16_t mlx90332c_programming_keys_values[] = {
+    0x5683u, 0x5AD7u, 0x5AD6u, 0x0047u, 0xAA4Au
 };
 
-const mlx_prog_keys_t mlx81118xab_programming_keys = {
-    .length = sizeof(mlx81118xab_programming_keys_values) / sizeof(uint16_t),
-    .values = mlx81118xab_programming_keys_values,
+const mlx_prog_keys_t mlx90332c_programming_keys = {
+    .length = sizeof(mlx90332c_programming_keys_values) / sizeof(uint16_t),
+    .values = mlx90332c_programming_keys_values,
 };
 
-const mlx_ppm_loader_t mlx81118xab_ppm_loader = {
-    .prog_keys = &mlx81118xab_programming_keys,
+const mlx_ppm_loader_t mlx90332c_ppm_loader = {
+    .prog_keys = &mlx90332c_programming_keys,
     .eeprom_verification_session = true,
     .flash_cs_programming_session = true,
 };
 
-const mlx_chip_t mlx81118xab = {
-    .name = "MLX81118xAB",
+const mlx_chip_t mlx90332c = {
+    .name = "MLX90332C",
     .project_ids = {
-        .length = sizeof(mlx81118xab_project_ids) / sizeof(mlx_project_id_t),
-        .values = mlx81118xab_project_ids
+        .length = sizeof(mlx90332c_project_ids) / sizeof(mlx_project_id_t),
+        .values = mlx90332c_project_ids
     },
     .memories = {
-        .flash = &mlx81118xab_flash,
-        .flash_cs = &mlx81118xab_flash_cs,
-        .nv_memory = &mlx81118xab_nv_memory,
+        .flash = &mlx90332c_flash,
+        .flash_cs = &mlx90332c_flash_cs,
+        .nv_memory = &mlx90332c_nv_memory,
     },
     .bootloaders = {
-        .ppm_loader = &mlx81118xab_ppm_loader,
+        .ppm_loader = &mlx90332c_ppm_loader,
         .uart_loader = NULL,
     },
 };

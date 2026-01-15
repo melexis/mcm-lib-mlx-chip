@@ -3,7 +3,7 @@
  * @brief Melexis chip databases
  * @internal
  *
- * @copyright (C) 2024-2025 Melexis N.V.
+ * @copyright (C) 2024-2026 Melexis N.V.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -110,6 +110,10 @@ typedef struct mlx_chip_s {
 extern const mlx_chip_t * camcu_chips[];
 
 const mlx_chip_t * mlxchip_get_camcu_chip(uint16_t project_id);
+
+extern const mlx_chip_t * ganymede_chips[];
+
+const mlx_chip_t * mlxchip_get_ganymede_chip(uint16_t project_id);
 
 /** @} */
 

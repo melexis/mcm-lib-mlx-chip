@@ -3,7 +3,7 @@
  * @brief Melexis MLX81354A01 chip database
  * @internal
  *
- * @copyright (C) 2024-2025 Melexis N.V.
+ * @copyright (C) 2024-2026 Melexis N.V.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@
  *
  * @ingroup lib_mlx_chip
  *
- * @details This file was automatically generated using pymlxchip v4.17.6 and provides the
+ * @details This file was automatically generated using pymlxchip v4.18.1 and provides the
  * declarations of the Melexis MLX81354A01 chip database.
  * @{
  */
