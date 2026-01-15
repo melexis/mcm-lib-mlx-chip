@@ -51,7 +51,7 @@
 #include "mlx91230ba.h"
 #include "mlx91230bb.h"
 /* ganymede */
-#include "db/mlx90332c.h"
+#include "mlx90332c.h"
 
 const mlx_chip_t * camcu_chips[] = {
     &mlx81113xaa,

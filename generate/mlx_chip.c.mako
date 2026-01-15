@@ -35,7 +35,7 @@ from datetime import datetime
 %endfor
 /* ganymede */
 %for chip in sorted(ganymede_chips, key=lambda x: x.full_name):
-#include "db/${chip.full_name.lower()}.h"
+#include "${chip.full_name.lower()}.h"
 %endfor
 
 const mlx_chip_t * camcu_chips[] = {
