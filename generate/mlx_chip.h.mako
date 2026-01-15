@@ -114,6 +114,10 @@ extern const mlx_chip_t * camcu_chips[];
 
 const mlx_chip_t * mlxchip_get_camcu_chip(uint16_t project_id);
 
+extern const mlx_chip_t * ganymede_chips[];
+
+const mlx_chip_t * mlxchip_get_ganymede_chip(uint16_t project_id);
+
 /** @} */
 
 #ifdef __cplusplus
