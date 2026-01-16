@@ -13,6 +13,14 @@ def print_prog_keys(keys):
         retval += "0x%04Xu, " % key
     retval = retval[:-2]
     return retval
+
+def get_memory_type(memory):
+    mem_type = memory.type.upper()
+    if mem_type == "XFAB":
+        return "MEM_TYPE_AMALTHEA_XFE"
+    if mem_type == "KF":
+        return "MEM_TYPE_AMALTHEA_KF"
+    return f"MEM_TYPE_{mem_type.replace(' ', '_')}"
 %>\
 /**
  * @file
@@ -68,6 +76,7 @@ const mlx_flash_t ${mlx_chip.full_name.lower()}_flash = {
     .write_unit = ${"0x%X" % mlx_chip.flash.write_size}u,
     .write_time = ${mlx_chip.flash.write_time},
     .write_partial = ${bool_to_c(mlx_chip.flash.partial_write)},
+    .type = ${get_memory_type(mlx_chip.flash)},
 };
 % endif
 % if mlx_chip.flash_cs is not None:
@@ -79,6 +88,7 @@ const mlx_flash_cs_t ${mlx_chip.full_name.lower()}_flash_cs = {
     .page = ${"0x%X" % mlx_chip.flash_cs.pagesize}u,
     .erase_time = ${mlx_chip.flash_cs.erase_time},
     .write_time = ${mlx_chip.flash_cs.write_time},
+    .type = ${get_memory_type(mlx_chip.flash_cs)},
 };
 % endif
 % if mlx_chip.nv_memory is not None:
@@ -89,6 +99,7 @@ const mlx_nv_memory_t ${mlx_chip.full_name.lower()}_nv_memory = {
     .writeable = ${"0x%X" % mlx_chip.nv_memory.writeable}u,
     .page = ${"0x%X" % mlx_chip.nv_memory.pagesize}u,
     .write_time = ${mlx_chip.nv_memory.write_time},
+    .type = ${get_memory_type(mlx_chip.nv_memory)},
 };
 % endif
 % if mlx_chip.programming_keys is not None:
