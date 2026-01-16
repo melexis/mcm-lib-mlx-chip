@@ -48,6 +48,14 @@ typedef struct mlx_project_ids_s {
     const mlx_project_id_t * values;
 } mlx_project_ids_t;
 
+typedef enum mlx_memory_type_e {                /**< flash type enum */
+    MEM_TYPE_AMALTHEA_XFE = 0,                  /**< Amalthea XFE flash type */
+    MEM_TYPE_AMALTHEA_KF = 1,                   /**< Amalthea KF flash type */
+    MEM_TYPE_GANYMEDE_XFE = 2,                  /**< Ganymede XFE flash type */
+    MEM_TYPE_GANYMEDE_KF = 3,                   /**< Ganymede KF flash type */
+    MEM_TYPE_AMALTHEA_XFE2 = 4,                 /**< Amalthea XFE flash type (256 bytes pages) */
+} mlx_memory_type_t;                            /**< flash type */
+
 typedef struct mlx_flash_s {
     uint32_t start;
     uint32_t length;
@@ -58,6 +66,7 @@ typedef struct mlx_flash_s {
     uint32_t write_unit;
     double write_time;
     bool write_partial;
+    mlx_memory_type_t type;
 } mlx_flash_t;
 
 typedef struct mlx_flash_cs_s {
@@ -67,6 +76,7 @@ typedef struct mlx_flash_cs_s {
     uint32_t page;
     double erase_time;
     double write_time;
+    mlx_memory_type_t type;
 } mlx_flash_cs_t;
 
 typedef struct mlx_nv_memory_s {
@@ -75,6 +85,7 @@ typedef struct mlx_nv_memory_s {
     uint32_t writeable;
     uint32_t page;
     double write_time;
+    mlx_memory_type_t type;
 } mlx_nv_memory_t;
 
 typedef struct mlx_memories_s {

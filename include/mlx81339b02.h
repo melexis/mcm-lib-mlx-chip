@@ -50,6 +50,7 @@ const mlx_flash_t mlx81339b02_flash = {
     .write_unit = 0x80u,
     .write_time = 11,
     .write_partial = true,
+    .type = MEM_TYPE_AMALTHEA_KF,
 };
 
 const mlx_nv_memory_t mlx81339b02_nv_memory = {
@@ -58,6 +59,7 @@ const mlx_nv_memory_t mlx81339b02_nv_memory = {
     .writeable = 0x300u,
     .page = 0x80u,
     .write_time = 22,
+    .type = MEM_TYPE_AMALTHEA_KF,
 };
 
 const uint16_t mlx81339b02_programming_keys_values[] = {
