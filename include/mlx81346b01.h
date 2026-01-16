@@ -50,6 +50,7 @@ const mlx_flash_t mlx81346b01_flash = {
     .write_unit = 0x80u,
     .write_time = 7,
     .write_partial = true,
+    .type = MEM_TYPE_AMALTHEA_XFE,
 };
 
 const mlx_nv_memory_t mlx81346b01_nv_memory = {
@@ -58,6 +59,7 @@ const mlx_nv_memory_t mlx81346b01_nv_memory = {
     .writeable = 0x1B0u,
     .page = 0x8u,
     .write_time = 12.5,
+    .type = MEM_TYPE_AMALTHEA_XFE,
 };
 
 const uint16_t mlx81346b01_programming_keys_values[] = {

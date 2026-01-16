@@ -49,6 +49,7 @@ const mlx_flash_t mlx91230aa_flash = {
     .write_unit = 0x80u,
     .write_time = 7,
     .write_partial = true,
+    .type = MEM_TYPE_AMALTHEA_XFE,
 };
 
 const mlx_flash_cs_t mlx91230aa_flash_cs = {
@@ -58,6 +59,7 @@ const mlx_flash_cs_t mlx91230aa_flash_cs = {
     .page = 0x80u,
     .erase_time = 30,
     .write_time = 7,
+    .type = MEM_TYPE_AMALTHEA_XFE,
 };
 
 const mlx_nv_memory_t mlx91230aa_nv_memory = {
@@ -66,6 +68,7 @@ const mlx_nv_memory_t mlx91230aa_nv_memory = {
     .writeable = 0x1B0u,
     .page = 0x8u,
     .write_time = 12.5,
+    .type = MEM_TYPE_AMALTHEA_XFE,
 };
 
 const uint16_t mlx91230aa_programming_keys_values[] = {

@@ -49,6 +49,7 @@ const mlx_flash_t mlx90332c_flash = {
     .write_unit = 0x80u,
     .write_time = 7,
     .write_partial = true,
+    .type = MEM_TYPE_GANYMEDE_XFE,
 };
 
 const mlx_flash_cs_t mlx90332c_flash_cs = {
@@ -58,6 +59,7 @@ const mlx_flash_cs_t mlx90332c_flash_cs = {
     .page = 0x80u,
     .erase_time = 30,
     .write_time = 7,
+    .type = MEM_TYPE_GANYMEDE_XFE,
 };
 
 const mlx_nv_memory_t mlx90332c_nv_memory = {
@@ -66,6 +68,7 @@ const mlx_nv_memory_t mlx90332c_nv_memory = {
     .writeable = 0x200u,
     .page = 0x8u,
     .write_time = 14.3,
+    .type = MEM_TYPE_GANYMEDE_XFE,
 };
 
 const uint16_t mlx90332c_programming_keys_values[] = {
