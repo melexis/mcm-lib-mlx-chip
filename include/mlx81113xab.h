@@ -21,7 +21,7 @@
  *
  * @ingroup lib_mlx_chip
  *
- * @details This file was automatically generated using pymlxchip v4.18.1 and provides the
+ * @details This file was automatically generated using pymlxchip v4.19.0 and provides the
  * declarations of the Melexis MLX81113xAB chip database.
  * @{
  */
@@ -36,7 +36,7 @@ extern "C" {
 #endif
 
 const mlx_project_id_t mlx81113xab_project_ids[] = {
-    {.id = 0x1203u, .name = "MLX81113xAB"},
+    {.id = 0x1203u, .name = "MLX81113Kxx-BAB-000"},
 };
 
 const mlx_flash_t mlx81113xab_flash = {
