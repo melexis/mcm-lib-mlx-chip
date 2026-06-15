@@ -1,6 +1,6 @@
 /**
  * @file
- * @brief Melexis MLX80339B02 chip database
+ * @brief Melexis MLX80349A01 chip database
  * @internal
  *
  * @copyright (C) 2024-2026 Melexis N.V.
@@ -22,7 +22,7 @@
  * @ingroup lib_mlx_chip
  *
  * @details This file was automatically generated using pymlxchip v4.22.0 and provides the
- * declarations of the Melexis MLX80339B02 chip database.
+ * declarations of the Melexis MLX80349A01 chip database.
  * @{
  */
 #pragma once
@@ -35,15 +35,12 @@
 extern "C" {
 #endif
 
-const mlx_project_id_t mlx80339b02_project_ids[] = {
-    {.id = 0x290Au, .name = "MLX80339-KDC-BMX-210"},
-    {.id = 0x290Bu, .name = "MLX80339-KDC-BMX-211"},
-    {.id = 0x2914u, .name = "MLX80339-KDC-BMX-220"},
-    {.id = 0x2963u, .name = "MLX80339-KDC-BMX-299"},
-    {.id = 0x2978u, .name = "MLX80339-KDC-BMX-820"},
+const mlx_project_id_t mlx80349a01_project_ids[] = {
+    {.id = 0x4A1Eu, .name = "MLX80349-KLW-AMX-210"},
+    {.id = 0x4A28u, .name = "MLX80349-KLW-AMX-220"},
 };
 
-const mlx_nv_memory_t mlx80339b02_nv_memory = {
+const mlx_nv_memory_t mlx80349a01_nv_memory = {
     .start = 0x00800u,
     .length = 0x00400u,
     .writeable = 0x300u,
@@ -52,33 +49,33 @@ const mlx_nv_memory_t mlx80339b02_nv_memory = {
     .type = MEM_TYPE_AMALTHEA_KF,
 };
 
-const uint16_t mlx80339b02_programming_keys_values[] = {
+const uint16_t mlx80349a01_programming_keys_values[] = {
     0x5648u, 0xA5E4u, 0xA5E3u, 0x95A8u
 };
 
-const mlx_prog_keys_t mlx80339b02_programming_keys = {
-    .length = sizeof(mlx80339b02_programming_keys_values) / sizeof(uint16_t),
-    .values = mlx80339b02_programming_keys_values,
+const mlx_prog_keys_t mlx80349a01_programming_keys = {
+    .length = sizeof(mlx80349a01_programming_keys_values) / sizeof(uint16_t),
+    .values = mlx80349a01_programming_keys_values,
 };
 
-const mlx_uart_loader_t mlx80339b02_uart_loader = {
-    .prog_keys = &mlx80339b02_programming_keys,
+const mlx_uart_loader_t mlx80349a01_uart_loader = {
+    .prog_keys = &mlx80349a01_programming_keys,
 };
 
-const mlx_chip_t mlx80339b02 = {
-    .name = "MLX80339B02",
+const mlx_chip_t mlx80349a01 = {
+    .name = "MLX80349A01",
     .project_ids = {
-        .length = sizeof(mlx80339b02_project_ids) / sizeof(mlx_project_id_t),
-        .values = mlx80339b02_project_ids
+        .length = sizeof(mlx80349a01_project_ids) / sizeof(mlx_project_id_t),
+        .values = mlx80349a01_project_ids
     },
     .memories = {
         .flash = NULL,
         .flash_cs = NULL,
-        .nv_memory = &mlx80339b02_nv_memory,
+        .nv_memory = &mlx80349a01_nv_memory,
     },
     .bootloaders = {
         .ppm_loader = NULL,
-        .uart_loader = &mlx80339b02_uart_loader,
+        .uart_loader = &mlx80349a01_uart_loader,
     },
 };
 
