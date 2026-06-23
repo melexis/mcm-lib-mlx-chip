@@ -21,7 +21,7 @@
  *
  * @ingroup lib_mlx_chip
  *
- * @details This file was automatically generated using pymlxchip v4.22.0 and provides the
+ * @details This file was automatically generated using pymlxchip v4.23.0 and provides the
  * declarations of the Melexis MLX80349A01 chip database.
  * @{
  */
