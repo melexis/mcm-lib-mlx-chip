@@ -21,7 +21,7 @@
  *
  * @ingroup lib_mlx_chip
  *
- * @details This file was automatically generated using pymlxchip v4.22.0 and provides the
+ * @details This file was automatically generated using pymlxchip v4.23.0 and provides the
  * declarations of the Melexis MLX80339B02 chip database.
  * @{
  */
@@ -39,6 +39,7 @@ const mlx_project_id_t mlx80339b02_project_ids[] = {
     {.id = 0x290Au, .name = "MLX80339-KDC-BMX-210"},
     {.id = 0x290Bu, .name = "MLX80339-KDC-BMX-211"},
     {.id = 0x2914u, .name = "MLX80339-KDC-BMX-220"},
+    {.id = 0x2962u, .name = "MLX80339-KDC-BMX-298"},
     {.id = 0x2963u, .name = "MLX80339-KDC-BMX-299"},
     {.id = 0x2978u, .name = "MLX80339-KDC-BMX-820"},
 };
