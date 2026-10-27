@@ -51,6 +51,7 @@ typedef enum mlx_memory_type_e {                /**< flash type enum */
     MEM_TYPE_GANYMEDE_XFE = 2,                  /**< Ganymede XFE flash type */
     MEM_TYPE_GANYMEDE_KF = 3,                   /**< Ganymede KF flash type */
     MEM_TYPE_AMALTHEA_XFE2 = 4,                 /**< Amalthea XFE flash type (256 bytes pages) */
+    MEM_TYPE_GANYMEDE_KF2 = 5,                  /**< Ganymede KF flash type (ccit crc) */
 } mlx_memory_type_t;                            /**< flash type */
 
 typedef struct mlx_flash_s {

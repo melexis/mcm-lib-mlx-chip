@@ -21,7 +21,7 @@
  *
  * @ingroup lib_mlx_chip
  *
- * @details This file was automatically generated using pymlxchip v4.23.0 and provides the
+ * @details This file was automatically generated using pymlxchip v4.26.0 and provides the
  * declarations of the Melexis MLX80349A01 chip database.
  * @{
  */
@@ -36,8 +36,8 @@ extern "C" {
 #endif
 
 const mlx_project_id_t mlx80349a01_project_ids[] = {
-    {.id = 0x4A1Eu, .name = "MLX80349-KLW-AMX-210"},
-    {.id = 0x4A28u, .name = "MLX80349-KLW-AMX-220"},
+    {.id = 0x4A1Eu, .name = "MLX80349-KLW-AMX-010"},
+    {.id = 0x4A28u, .name = "MLX80349-KLW-AMX-020"},
 };
 
 const mlx_nv_memory_t mlx80349a01_nv_memory = {
