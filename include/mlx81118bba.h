@@ -21,7 +21,7 @@
  *
  * @ingroup lib_mlx_chip
  *
- * @details This file was automatically generated using pymlxchip v4.23.0 and provides the
+ * @details This file was automatically generated using pymlxchip v4.26.0 and provides the
  * declarations of the Melexis MLX81118BBA chip database.
  * @{
  */
@@ -45,11 +45,11 @@ const mlx_flash_t mlx81118bba_flash = {
     .page = 0x80u,
     .sector = 0x1000u,
     .erase_unit = 0x10000u,
-    .erase_time = 1000,
+    .erase_time = 1500,
     .write_unit = 0x80u,
     .write_time = 7,
     .write_partial = true,
-    .type = MEM_TYPE_GANYMEDE_KF,
+    .type = MEM_TYPE_GANYMEDE_KF2,
 };
 
 const mlx_nv_memory_t mlx81118bba_nv_memory = {
@@ -58,7 +58,7 @@ const mlx_nv_memory_t mlx81118bba_nv_memory = {
     .writeable = 0x300u,
     .page = 0x80u,
     .write_time = 10,
-    .type = MEM_TYPE_GANYMEDE_KF,
+    .type = MEM_TYPE_GANYMEDE_KF2,
 };
 
 const mlx_ppm_loader_t mlx81118bba_ppm_loader = {
